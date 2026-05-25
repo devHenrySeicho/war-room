@@ -1,6 +1,8 @@
 package warroom;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class Vertex<TYPE> {
     private TYPE data;
@@ -27,5 +29,13 @@ public class Vertex<TYPE> {
 
     public void addOutput(Edge<TYPE> edge){
         this.output.add(edge);
+    }
+
+    public List<Edge<TYPE>> getInput() {
+        return Collections.unmodifiableList(this.input);
+    }
+
+    public List<Edge<TYPE>> getOutput() {
+        return Collections.unmodifiableList(this.output);
     }
 }

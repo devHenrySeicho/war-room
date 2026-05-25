@@ -1,12 +1,16 @@
 package warroom;
 
-public class Main {
-    public static void main(String[] args) {
-        Graph<String> graph = new Graph<String>();
-        graph.addVertex("a");
-        graph.addVertex("b");
+import java.io.IOException;
 
-        graph.addEdge(2.0,"a", "b");
-        graph.addEdge(5.0,"b", "a");
+public class Main {
+
+    public static void main(String[] args) throws IOException {
+
+        Graph<String> graph = new Graph<>();
+
+        Generator.generate(graph);
+        graph.saveAsJson("graph.json");
+
+        System.out.println("Graph saved as graph.json");
     }
 }
